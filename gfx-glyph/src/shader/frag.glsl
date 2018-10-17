@@ -1,14 +1,14 @@
-#version 150
+#version 300 es
 
-uniform sampler2D font_tex;
+uniform mediump sampler2D font_tex;
 
-in vec2 f_tex_pos;
-in vec4 f_color;
+in mediump vec2 f_tex_pos;
+in mediump vec4 f_color;
 
-out vec4 Target0;
+out mediump vec4 Target0;
 
 void main() {
-    float alpha = texture(font_tex, f_tex_pos).r;
+    mediump float alpha = texture(font_tex, f_tex_pos).r;
     if (alpha <= 0.0) {
         discard;
     }

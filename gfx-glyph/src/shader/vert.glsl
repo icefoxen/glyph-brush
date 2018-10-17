@@ -1,23 +1,23 @@
-#version 150
+#version 300 es
 
-uniform mat4 transform;
+uniform mediump mat4 transform;
 
-in vec3 left_top;
-in vec2 right_bottom;
-in vec2 tex_left_top;
-in vec2 tex_right_bottom;
-in vec4 color;
+in mediump vec3 left_top;
+in mediump vec2 right_bottom;
+in mediump vec2 tex_left_top;
+in mediump vec2 tex_right_bottom;
+in mediump vec4 color;
 
-out vec2 f_tex_pos;
-out vec4 f_color;
+out mediump vec2 f_tex_pos;
+out mediump vec4 f_color;
 
 // generate positional data based on vertex ID
 void main() {
-    vec2 pos = vec2(0.0);
-    float left = left_top.x;
-    float right = right_bottom.x;
-    float top = left_top.y;
-    float bottom = right_bottom.y;
+    mediump vec2 pos = vec2(0.0);
+    mediump float left = left_top.x;
+    mediump float right = right_bottom.x;
+    mediump float top = left_top.y;
+    mediump float bottom = right_bottom.y;
 
     switch (gl_VertexID) {
         case 0:
